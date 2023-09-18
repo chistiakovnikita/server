@@ -5,7 +5,6 @@ import multer from 'multer'
 import authMiddleware from './middleware/authMiddleware.js'
 import cors from 'cors'
 import 'dotenv/config'
-import 'gitignore'
 
 const PORT = process.env.PORT || 5555
 const app = express()
@@ -35,8 +34,8 @@ const start = async () => {
         await mongoose.connect(
             `mongodb+srv://nikita:nikita@cluster0.neitrms.mongodb.net/blog?retryWrites=true&w=majority`
         )
-        app.listen(PORT, () => {
-            console.log(`server started on port ${PORT}`)
+        app.listen(5555, () => {
+            console.log(`server started on port 5555`)
         })
     } catch (error) {
         console.log(error)

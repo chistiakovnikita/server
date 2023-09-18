@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage })
 
-app.use('/', router)
+app.get('/', router)
 app.post('/upload', authMiddleware, upload.single('image'), (req, res) => {
     res.json({
         url: `/uploads/${req.file.originalname}`,

@@ -35,7 +35,7 @@ const start = async () => {
         await mongoose.connect(
             `mongodb+srv://nikita:nikita@cluster0.neitrms.mongodb.net/blog?retryWrites=true&w=majority`
         )
-        app.listen(5555, () => {
+        app.listen(PORT, () => {
             console.log(`server started on port ${PORT}`)
         })
     } catch (error) {

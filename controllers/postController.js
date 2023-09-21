@@ -121,7 +121,7 @@ class postController {
     async search(req, res) {
         try {
             const { tags } = req.body
-            const post = await Post.find({ tags })
+            const post = await Post.find({ tags }).populate('author').exec()
             console.log(post)
 
             if (!post || !post.length) {

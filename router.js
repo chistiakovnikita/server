@@ -30,7 +30,7 @@ router.post(
     postController.create
 )
 router.get('/posts', postController.getAllPosts)
-router.post('/posts/post', postController.search)
+router.get('/posts/post', postController.search)
 router.get('/posts/:id', postController.getOnePost)
 router.patch(
     '/posts/:id',

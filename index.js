@@ -4,7 +4,6 @@ import router from './router.js'
 import multer from 'multer'
 import authMiddleware from './middleware/authMiddleware.js'
 import cors from 'cors'
-import 'dotenv/config'
 
 const PORT = process.env.PORT || 5555
 const app = express()

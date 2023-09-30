@@ -34,7 +34,7 @@ router.post('/posts/post', postController.search)
 router.get('/posts/:id', postController.getOnePost)
 router.patch(
     '/posts/:id',
-    authMiddleware,
+    // authMiddleware,
     postValidation,
     handleValidationErrors,
     postController.update

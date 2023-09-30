@@ -30,9 +30,7 @@ app.post('/upload', authMiddleware, upload.single('image'), (req, res) => {
 
 const start = async () => {
     try {
-        await mongoose.connect(
-            `mongodb+srv://nikita:nikita@cluster0.neitrms.mongodb.net/blog?retryWrites=true&w=majority`
-        )
+        await mongoose.connect(process.env.MONGO_URL)
         app.listen(PORT, () => {
             console.log(`server started on port ${PORT}`)
         })

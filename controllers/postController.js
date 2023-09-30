@@ -12,7 +12,7 @@ class postController {
                 author: req.userId,
             })
             await post.save()
-            return res.json({ message: 'Пост успешно добавлен' })
+            return res.json({ message: 'Пост успешно добавлен', post })
         } catch (error) {
             console.log(error)
             res.status(400).json({ message: 'Не удалось создать пост' })

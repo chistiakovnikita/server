@@ -4,6 +4,7 @@ import router from './router.js'
 import multer from 'multer'
 import authMiddleware from './middleware/authMiddleware.js'
 import cors from 'cors'
+import fs from 'fs'
 
 const PORT = process.env.PORT || 5555
 const app = express()
@@ -13,6 +14,9 @@ app.use('/uploads', express.static('uploads')) //для обработки uploa
 
 const storage = multer.diskStorage({
     destination: (_, __, cb) => {
+        if (!fs.existsSync('uploads')) {
+            fs.mkdirSync('uploads')
+        }
         cb(null, 'uploads')
     },
     filename: (_, file, cb) => {
